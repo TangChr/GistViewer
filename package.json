@@ -1,27 +1,25 @@
 {
   "name": "GistViewer",
-  "version": "0.1.1",
-  "description": "Simple Gist Viewer",
-  "main": "app/index.js",
+  "version": "1.0.0",
+  "main": "./main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "package": "electron-packager ./ GistViewer --all --out ~/Desktop/GistViewer --version 0.30.2 --overwrite"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TangChr/GistViewer.git"
   },
-  "keywords": [
-    "github",
-    "gist"
-  ],
-  "author": "Menci",
-  "license": "GPL-3.0",
+  "author": "Christian Tang <christian@tcdev.dk> (http://seaweed.dk)",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/TangChr/GistViewer/issues"
   },
-  "homepage": "https://github.com/TangChr/GistViewer#readme",
+  "devDependencies": {
+    "electron-packager": "^5.0.1",
+    "electron-prebuilt": "^0.30.3"
+  },
   "dependencies": {
-    "jhub": "^2.2.0"
+    "jhub": "^2.3.1"
   }
 }
