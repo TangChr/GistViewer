@@ -1,20 +1,21 @@
 'use strict';
 
-var ipc = require('ipc');
-var jhub = require('jhub');
+const ipc = require('ipc');
+const jhub = require('jhub');
 
-var btnLoad = document.querySelector('#btn_load');
-var btnClose = document.querySelector('#btn_close');
-var gistList = document.querySelector('#gist_list');
+var load = document.querySelector('#load');
+var settings = document.querySelector('#settings');
+var close = document.querySelector('#close');
+var list = document.querySelector('#gist-list');
 
-btnLoad.addEventListener('click', function () {
+load.addEventListener('click', function () {
 		jhub.init('TangChr');
     jhub.userGists(function(gists) {
 			var gList = '';
 			for (var g in gists) {
 				gList += '<li><a class="gist-link" id="'+gists[g].id+'">'+gists[g].description+'</a></li>';
 			}
-			gistList.innerHTML = gList;
+			list.innerHTML = gList;
 			var gistLinks = document.querySelectorAll('.gist-link');
 			for(var l = 0; l < gistLinks.length; l++) {
 				var link = gistLinks[l];
@@ -24,19 +25,25 @@ btnLoad.addEventListener('click', function () {
 		});
 });
 
-btnClose.addEventListener('click', function () {
-    ipc.send('close-main-window');
-});
-
 function prepareGistLink(gistLink, gistId) {
 	gistLink.addEventListener('click', function() {
 		var gist = jhub.gist(gistId);
 		gist.get(function(info) {
-			var files = '';
+			var files = 'Files: ';
+			var langs = 'Languages: ';
 			for(var f = 0; f < info.files.length; f++) {
 				files += info.files[f].name+', ';
+				langs += info.files[f].language+', ';
 			}
-			alert(info.description + '\n' + files.substr(0, files.length-2));
+			alert(info.description + '\n' + files.substr(0, files.length-2) + '\n' + langs.substr(0, langs.length-2));
 		});
 	});
 }
+
+settings.addEventListener('click', function() {
+	ipc.send('open-settings-window');
+});
+
+close.addEventListener('click', function () {
+    ipc.send('close-main-window');
+});

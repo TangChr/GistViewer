@@ -7,26 +7,54 @@
 body {
 	 font-family: Arial, Verdana, sans-serif;
 	 -webkit-app-region: drag;
+	 overflow: hidden;
 }
 
-#container {
-	margin: 10px;
+.window-header {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
 }
 
-header h1 {
+.header-large {
+	height: 70px;
+}
+
+.header-small {
+	height: 45px;
+}
+
+.window-header h1 {
 	color: #4078c0;
 	font-size: 2.5em;
+	position: absolute;
+	top: 2px;
+	left: 5px;
+}
+
+#window-content {
+	padding: 8px;
+	width: auto;;
+	height: 100%;
+}
+
+.window-header h4 {
+	color: #4078c0;
+	font-size: 1.5em;
+	position: absolute;
+	top: 4px;
+	left: 5px;
 }
 
 button,
-#gist_list li a {
+.list li a {
 	-webkit-app-region: no-drag;
 }
 
 #menu {
 	position: absolute;
-	right: 10px;
-	top: 10px;
+	top: 3px;
+	right: 5px;
 }
 
 #menu li {
@@ -38,16 +66,16 @@ button,
 	background: transparent;
 	border: none;
 	color: #4078c0;
+	font-size: 0.9em;
 	font-weight: bold;
-	/*margin-left: 2px;*/
 }
 
 #menu button:hover {
 	color: #e74c3c;
 }
 
-#gist_list li a,
-#gist_list li a:active {
+.list li a,
+.list li a:active {
 	color: #4078c0;
 	font-weight: bold;
 	text-decoration: none;
@@ -56,6 +84,6 @@ button,
 	margin-bottom: 3px;
 }
 
-#gist_list li a:hover {
+.list li a:hover {
 	color: #e74c3c;
 }
