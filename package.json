@@ -15,8 +15,7 @@
     "asar": "^0.12.3",
     "electron-builder": "^6.0.2",
     "electron-packager": "^8.0.0",
-    "electron-prebuilt": "^0.30.3",
-    "shelljs": "^0.7.4"
+    "electron-prebuilt": "^0.30.3"
   },
   "dependencies": {
     "jhub": "^2.3.1"
