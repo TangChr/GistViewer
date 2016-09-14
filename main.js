@@ -1,10 +1,10 @@
 'use strict';
 
-const app = require('app');
+const app           = require('app');
 const BrowserWindow = require('browser-window');
-const ipc = require('ipc');
+const ipc           = require('ipc');
 
-var mainWindow = null;
+var mainWindow     = null;
 var settingsWindow = null;
 
 app.on('ready', function() {

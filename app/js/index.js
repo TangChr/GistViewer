@@ -1,21 +1,21 @@
 'use strict';
 
-const ipc = require('ipc');
+const ipc  = require('ipc');
 const jhub = require('jhub');
 
-var load = document.querySelector('#load');
+var load 		 = document.querySelector('#load');
 var settings = document.querySelector('#settings');
-var close = document.querySelector('#close');
-var list = document.querySelector('#gist-list');
+var close 	 = document.querySelector('#close');
+var gistList = document.querySelector('#gist-list');
 
 load.addEventListener('click', function () {
 		jhub.init('TangChr');
     jhub.userGists(function(gists) {
-			var gList = '';
+			var gistItems = '';
 			for (var g in gists) {
-				gList += '<li><a class="gist-link" id="'+gists[g].id+'">'+gists[g].description+'</a></li>';
+				gistItems += '<li><a class="gist-link" id="'+gists[g].id+'">'+gists[g].description+'</a></li>';
 			}
-			list.innerHTML = gList;
+			gistList.innerHTML = gistItems;
 			var gistLinks = document.querySelectorAll('.gist-link');
 			for(var l = 0; l < gistLinks.length; l++) {
 				var link = gistLinks[l];
