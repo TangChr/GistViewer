@@ -1,6 +1,7 @@
 # GistViewer
 
 [![Dependencies](https://david-dm.org/TangChr/GistViewer.svg)](https://david-dm.org/TangChr/GistViewer)
+[![devDependencies](https://david-dm.org/TangChr/GistViewer/dev-status.svg)](https://david-dm.org/TangChr/GistViewer?type=dev)
 [![License](https://img.shields.io/github/license/TangChr/GistViewer.svg)](https://raw.githubusercontent.com/TangChr/GistViewer/master/LICENSE)
 
 Small Electron based application that displays your [Gist](https://gist.github.com)s
