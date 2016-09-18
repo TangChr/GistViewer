@@ -5,7 +5,7 @@ const BrowserWindow = require('browser-window');
 const ipc           = require('ipc');
 
 var mainWindow     = null;
-var settingsWindow = null;
+var aboutWindow = null;
 
 app.on('ready', function() {
     mainWindow = new BrowserWindow({
@@ -22,27 +22,27 @@ ipc.on('close-main-window', function () {
     app.quit();
 });
 
-ipc.on('open-settings-window', function () {
-    if (settingsWindow) {
+ipc.on('open-about-window', function () {
+    if (aboutWindow) {
         return;
     }
 
-    settingsWindow = new BrowserWindow({
+    aboutWindow = new BrowserWindow({
         frame: false,
         height: 300,
         resizable: false,
         width: 400
     });
 
-    settingsWindow.loadUrl('file://' + __dirname + '/app/settings.html');
+    aboutWindow.loadUrl('file://' + __dirname + '/app/about.html');
 
-    settingsWindow.on('closed', function () {
-        settingsWindow = null;
+    aboutWindow.on('closed', function () {
+        aboutWindow = null;
     });
 });
 
-ipc.on('close-settings-window', function () {
-    if (settingsWindow) {
-        settingsWindow.close();
+ipc.on('close-about-window', function () {
+    if (aboutWindow) {
+        aboutWindow.close();
     }
 });

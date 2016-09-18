@@ -47,8 +47,13 @@ body {
 }
 
 button,
-.list li a {
+.list li a,
+#TangChr-link {
 	-webkit-app-region: no-drag;
+}
+
+#TangChr-link {
+	cursor: pointer;
 }
 
 #menu {
