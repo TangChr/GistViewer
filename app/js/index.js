@@ -10,7 +10,7 @@ var gistList = document.querySelector('#gist-list');
 
 load.addEventListener('click', function () {
 		jhub.init('TangChr');
-    jhub.userGists(function(gists) {
+    jhub.gists(function(gists) {
 			var gistItems = '';
 			for (var g in gists) {
 				gistItems += '<li><a class="gist-link" id="'+gists[g].id+'">'+gists[g].description+'</a></li>';
