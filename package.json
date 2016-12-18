@@ -1,5 +1,5 @@
 {
-  "name": "GistViewer",
+  "name": "gistviewer",
   "version": "1.0.0",
   "main": "./main.js",
   "repository": {
@@ -12,12 +12,12 @@
     "url": "https://github.com/TangChr/GistViewer/issues"
   },
   "dependencies": {
-    "jhub": "^2.3.3"
+    "jhub": "^2.3.8"
   },
   "devDependencies": {
     "asar": "^0.12.3",
     "electron-packager": "^8.0.0",
-    "electron-prebuilt": "^0.30.3"
+    "electron-prebuilt": "^1.4.12"
   },
   "scripts": {
     "start": "electron .",
