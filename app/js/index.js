@@ -2,7 +2,7 @@ var electron = require('electron');
 var ipcRenderer = electron.ipcRenderer;
 var jhub = require('jhub');
 
-var load 		 = document.querySelector('#load');
+var load 	 = document.querySelector('#load');
 var close 	 = document.querySelector('#close');
 var gistList = document.querySelector('#gist-list');
 
@@ -43,6 +43,5 @@ function openGist(gistId) {
 }
 
 close.addEventListener('click', function () {
-	//alert('foo');
 	ipcRenderer.sendSync('close-main-window');
 });
