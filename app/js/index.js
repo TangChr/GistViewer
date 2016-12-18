@@ -1,10 +1,8 @@
-'use strict';
-
-const ipc  = require('ipc');
-const jhub = require('jhub');
+var electron = require('electron');
+var ipcRenderer = electron.ipcRenderer;
+var jhub = require('jhub');
 
 var load 		 = document.querySelector('#load');
-var about = document.querySelector('#about');
 var close 	 = document.querySelector('#close');
 var gistList = document.querySelector('#gist-list');
 
@@ -44,10 +42,7 @@ function openGist(gistId) {
 	});
 }
 
-about.addEventListener('click', function() {
-	ipc.send('open-about-window');
-});
-
 close.addEventListener('click', function () {
-    ipc.send('close-main-window');
+	//alert('foo');
+	ipcRenderer.sendSync('close-main-window');
 });
