@@ -1,31 +1,31 @@
 {
-  "name": "gistviewer",
-  "version": "1.0.0",
-  "main": "./main.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TangChr/GistViewer.git"
-  },
-  "author": "Christian Tang <christian@tcdev.dk> (http://seaweed.dk)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TangChr/GistViewer/issues"
-  },
-  "dependencies": {
-    "jhub": "^2.3.8"
-  },
-  "devDependencies": {
-    "asar": "^0.12.3",
-    "electron-packager": "^8.0.0",
-    "electron-prebuilt": "^1.4.12"
-  },
-  "scripts": {
-    "start": "electron .",
-    "build:win32": "electron-packager . GistViewer --out=dist --platform=win32 --arch=ia32 --ignore=node_modules/electron-* --overwrite",
-    "build:win64": "electron-packager . GistViewer --out=dist --platform=win32 --arch=x64 --ignore=node_modules/electron-* --overwrite",
-    "build": "npm run build:win32",
-    "pack:win32": "asar pack dist/GistViewer-win32-ia32/resources/app dist/GistViewer-win32-ia32/resources/app.asar",
-    "pack:win64": "asar pack dist/GistViewer-win32-x64/resources/app dist/GistViewer-win32-x64/resources/app.asar",
-    "pack": "npm run pack:win32"
-  }
+    "name": "gistviewer",
+    "version": "1.0.0",
+    "main": "./main.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TangChr/GistViewer.git"
+    },
+    "author": "Christian Tang <christian@tcdev.dk> (http://seaweed.dk)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/TangChr/GistViewer/issues"
+    },
+    "dependencies": {
+        "jhub": "^2.3.8"
+    },
+    "devDependencies": {
+        "asar": "^0.12.3",
+        "electron-packager": "^8.0.0",
+        "electron-prebuilt": "^1.4.12"
+    },
+    "scripts": {
+        "start": "electron .",
+        "build:win32": "electron-packager . GistViewer --out=dist --platform=win32 --arch=ia32 --ignore=node_modules/electron-* --overwrite",
+        "build:win64": "electron-packager . GistViewer --out=dist --platform=win32 --arch=x64 --ignore=node_modules/electron-* --overwrite",
+        "build": "npm run build:win32",
+        "pack:win32": "asar pack dist/GistViewer-win32-ia32/resources/app dist/GistViewer-win32-ia32/resources/app.asar",
+        "pack:win64": "asar pack dist/GistViewer-win32-x64/resources/app dist/GistViewer-win32-x64/resources/app.asar",
+        "pack": "npm run pack:win32"
+    }
 }
