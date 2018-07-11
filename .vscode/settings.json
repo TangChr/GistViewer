@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "node_modules": true,
+        "bin": true,
+        "**/package-lock.json": true,
+        "**/.DS_Store": true
+    }
+}
